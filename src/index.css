@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+@import "tailwindcss";
+
+
+body{
+    background-color: #000000cd;
+}
+h1,h2,h3,h4,h5,h6{
+     font-family: "Space Grotesk", sans-serif;
+}
+p,a,ul,li,button{
+    font-family: "Orbitron", sans-serif;
+}
+/* clerk user Button Adjust */
+
+.cl-avatarBox{
+    width:3rem;
+    height: 3rem;
+}
+.arrows{
+    height: 40px;
+    width: 40px;
+    margin: 1px;
+}
+
+/* carousel background effect animation */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradientFlow {
+  animation: gradientFlow 10s ease infinite;
+}
+
+

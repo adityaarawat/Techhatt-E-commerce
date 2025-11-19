@@ -1,0 +1,225 @@
+/* Footer.css - plain CSS (no Tailwind) */
+/* Main palette */
+:root {
+  --red: #ff2d2d;      /* primary red text */
+  --red-dark: #cc2424; /* hover */
+  --muted: rgba(255, 45, 45, 0.12);
+  --glass: rgba(255,255,255,0.02);
+  --gap: 24px;
+  --max-w: 1200px;
+  --fade-in-duration: 800ms;
+}
+
+/* Footer wrapper: transparent background with soft glass blur */
+.th-footer {
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.02) 100%);
+  backdrop-filter: blur(6px);
+  color: var(--red);
+  padding: 48px 20px;
+  border-top: 1px solid rgba(255,45,45,0.06);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Central container */
+.th-container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  gap: var(--gap);
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 18px;
+  animation: thFadeUp var(--fade-in-duration) ease both;
+}
+
+/* Columns */
+.th-col {
+  flex: 1 1 220px;
+  min-width: 200px;
+}
+
+/* Brand / Logo */
+.th-brand .th-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.th-logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255,45,45,0.12), rgba(255,45,45,0.04));
+  color: var(--red);
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transform: rotate(-6deg);
+  transition: transform 240ms ease;
+}
+.th-logo-mark:hover { transform: rotate(0deg) scale(1.03); }
+
+.th-logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+/* Paragraphs and small text */
+.th-desc {
+  margin: 6px 0 8px;
+  color: var(--red);
+  opacity: 0.95;
+}
+.th-credit {
+  display:block;
+  margin-top:8px;
+  font-size: 12px;
+  color: var(--red);
+  opacity: 0.8;
+}
+
+/* Headings */
+.th-heading {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--red);
+  position: relative;
+  text-transform: none;
+}
+
+/* Small animated underline on headings */
+.th-heading::after {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 3px;
+  border-radius: 3px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, rgba(255,45,45,0.9), rgba(255,45,45,0.6));
+  transform-origin: left center;
+  animation: slideIn 900ms ease;
+}
+
+/* Address block and lines */
+.th-address-block .th-line {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:8px 0;
+  font-size: 14px;
+  color: var(--red);
+}
+
+/* Icon style */
+.th-icon {
+  font-size: 16px;
+  display:inline-block;
+  min-width: 18px;
+  transition: transform 220ms ease, opacity 220ms ease;
+  color: var(--red);
+}
+.th-line:hover .th-icon {
+  transform: translateX(-4px);
+}
+
+/* Customer service list */
+.th-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--red);
+  font-size: 14px;
+}
+.th-list li {
+  margin: 8px 0;
+  position: relative;
+  padding-left: 0;
+  transition: transform 180ms ease;
+}
+.th-list li:hover { transform: translateX(6px); }
+
+/* Social icons */
+.th-socials {
+  display:flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+.th-social {
+  width:44px;
+  height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  text-decoration:none;
+  color: var(--red);
+  background: linear-gradient(180deg, rgba(255,45,45,0.02), rgba(255,45,45,0.01));
+  border: 1px solid rgba(255,45,45,0.06);
+  transition: transform 260ms cubic-bezier(.2,.9,.3,1), box-shadow 260ms, background 260ms;
+  font-size:18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+.th-social:hover {
+  transform: translateY(-6px) rotate(-6deg) scale(1.06);
+  box-shadow: 0 18px 36px rgba(255,45,45,0.06);
+}
+
+/* Bottom bar */
+.th-bottom {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display:flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,45,45,0.04);
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--red);
+  opacity: 0.9;
+}
+.th-bottom-links { display:flex; gap: 12px; }
+.th-bottom-links a {
+  color: var(--red);
+  text-decoration: none;
+  transition: color 160ms ease, transform 160ms ease;
+}
+.th-bottom-links a:hover {
+  color: var(--red-dark);
+  transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from { transform: scaleX(0); opacity: 0; }
+  to { transform: scaleX(1); opacity: 1; }
+}
+@keyframes thFadeUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Small screens: stack columns */
+@media (max-width: 880px) {
+  .th-container { gap: 18px; padding-bottom: 8px; }
+  .th-col { flex: 1 1 100%; min-width: 0; }
+  .th-social { width:40px; height:40px; font-size:16px; }
+  .th-bottom { gap: 8px; padding-top: 18px; }
+}
+
+/* Very small screens - tighten spacing */
+@media (max-width: 420px) {
+  .th-footer { padding: 28px 14px; }
+  .th-logo-text { font-size: 18px; }
+  .th-logo-mark { width: 46px; height: 46px; font-size: 16px; }
+  .th-heading { font-size: 15px; }
+}
